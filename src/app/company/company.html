@@ -1,4 +1,29 @@
 <div class="jumbotron text-center">
-  <h1>Company Page</h1>
-  <p>{{ message }}</p>
+  <h1>Company</h1>
+  <p>Company background, past year financials and revenue seasonality</p>
 </div>
+  <md-card>
+  <md-card-title>
+<label>Business details</label>
+  </md-card-title>
+  <md-card-content>
+    <md-input-container flex-lt-md="true" class="md-block">
+      <label>Enter the business name here</label><input layout-wrap="true" id="Business"> </input>
+    </md-input-container>
+    <md-input-container flex-lt-md="true" class="md-block">
+      <md-grid-list>List of all businesses which match the business name sourced from web service</md-grid-list>
+    </md-input-container>
+    <label>Select the business ICB sub-sector below</label>
+    <md-input-container flex-lt-md="true" class="md-block">
+      <industry-selector></industry-selector>
+    </md-input-container>
+    <label>Enter past year financials below</label>
+    <md-input-container flex-lt-md="true" class="md-block">
+      <financials></financials>
+    </md-input-container>
+    <label>Adjust revenue seasonality</label>
+    <md-input-container flex-lt-md="true" class="md-block">
+      <seasons></seasons>
+    </md-input-container>
+  </md-card-content>
+  </md-card>

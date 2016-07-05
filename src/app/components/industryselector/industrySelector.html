@@ -1,0 +1,14 @@
+<div class="divTable">
+  <div class="divTableBody">
+    <div class="divTableRow">
+      <div class="divTableCell">Industry: </div>
+      <div class="divTableCell"><select name="Industry" ng-model="$ctrl.filter"><option ng-repeat="record in ICBs" value="{{record.iICB}}">{{record.iICB}}: {{record.iName}}</option>
+      </select> </div>
+    </div>
+    <div class="divTableRow">
+      <div class="divTableCell">Subsector: </div>
+      <div class="divTableCell"> <select><option ng-repeat="x in subsectors | filter:$ctrl.filter" value="{{x.sICB}}">{{x.sICB}} {{x.sName}}</option>
+      </select></div>
+    </div>
+  </div>
+</div>

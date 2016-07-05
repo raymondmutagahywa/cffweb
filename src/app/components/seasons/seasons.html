@@ -1,33 +1,27 @@
-<div class="jumbotron text-center">
-  <h1>Financial page</h1>
-  <p>{{ message }}</p>
-</div>
-<div ng-controller="FinancialController as vm">
-  <table class="table table-bordered table-hover table-condensed">
+ <table class="table table-bordered table-hover table-condensed">
     <tr style="font-weight: bold">
       <td style="width:35%">Name</td>
       <td style="width:20%">Start</td>
       <td style="width:20%">End</td>
       <td style="width:25%">Sales %</td>
     </tr>
-    <tr ng-repeat="season in vm.seasons">
+    <tr ng-repeat="season in seasons">
       <td>
         <!-- editable username (text with validation) -->
-        <span editable-text="season.name" e-name="name" e-form="rowform" onbeforesave="vm.checkName(season.name, season.id)" e-required>
+        <span editable-text="season.name" e-name="name" e-form="rowform" onbeforesave="cSC.checkName(season.name, season.id)" e-required>
           {{ season.name || defaultseason }}
         </span>
       </td>
       <td>
         <!-- editable status (select-local) -->
-        <span editable-select="season.start" e-name="start" e-form="rowform" e-ng-options="s.value as s.text for s in vm.monthlist">
-          {{ vm.showStart(season) }}
+        <span editable-select="season.start" e-name="start" e-form="rowform" e-ng-options="s.value as s.text for s in monthlist">
+          {{ showStart(season) }}
         </span>
       </td>
-
       <td>
         <!-- editable status (select-local) -->
-        <span editable-select="season.end" e-name="start" e-form="rowform" e-ng-options="s.value as s.text for s in vm.monthlist">
-          {{ vm.showEnd(season) }}
+        <span editable-select="season.end" e-name="start" e-form="rowform" e-ng-options="s.value as s.text for s in monthlist">
+          {{ showEnd(season) }}
         </span>
       </td>
 
@@ -50,10 +44,9 @@
         </form>
         <div class="buttons" ng-show="!rowform.$visible">
           <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
-          <button class="btn btn-danger" ng-click="vm.removeUser($index)">del</button>
+          <button class="btn btn-danger" ng-click="removeUser($index)">del</button>
         </div>
       </td>
     </tr>
   </table>
-  <button class="btn btn-default" ng-click="vm.addUser()">Add row</button>
-</div>
+  <button class="btn btn-default" ng-click="addUser()">Add season</button>

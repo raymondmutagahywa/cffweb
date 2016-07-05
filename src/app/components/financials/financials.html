@@ -1,0 +1,40 @@
+  <form editable-form name="financialsForm" onaftersave="saveFinancials()">
+
+    <table class="table table-bordered table-hover table-condensed">
+      <!-- editable fields (text with validation) -->
+      <tr>
+        <td><span class="title">Sales: </span></td>
+        <td><span editable-text="data.sales" e-name="name" onbeforesave="checkSales($data)" e-required>{{ data.sales || 0 }}</span></td>
+      </tr>
+      <tr>
+        <td><span class="title">Costs of sales: </span></td>
+        <td> <span editable-text="data.costs" e-name="name" onbeforesave="checkCosts($data)" e-required>{{ data.costs || 0 }}</span></td>
+      </tr>
+      <tr>
+        <td><span class="title">Accounts receivable: </span></td>
+        <td><span editable-text="data.recievables" e-name="name" onbeforesave="checkReceivables($data)" e-required>{{ data.receivables || 0 }}</span></td>
+      </tr>
+      <tr>
+        <td><span class="title">Accounts payable: </span></td>
+        <td> <span editable-text="data.payables" e-name="name" onbeforesave="checkPayables($data)" e-required>{{ data.payables || 0 }}</span></td>
+      </tr>
+      <tr>
+        <td><span class="title">Inventory: </span></td>
+        <td><span editable-text="data.inventory" e-name="name" onbeforesave="checkInventory($data)" e-required>{{ data.inventory|| 0 }}</span></td>
+      </tr>
+      </table>
+    <div>
+      <!-- button to show form -->
+      <button type="button" class="btn btn-default" ng-click="financialsForm.$show()" ng-show="!financialsForm.$visible">
+        Edit
+      </button>
+      <!-- buttons to submit / cancel form -->
+      <span ng-show="financialsForm.$visible">
+        <button type="submit" class="btn btn-primary" ng-disabled="financialsForm.$waiting">
+          Save
+        </button>
+        <button type="button" class="btn btn-default" ng-disabled="financialsForm.$waiting" ng-click="financialsForm.$cancel()">
+          Cancel
+        </button>
+      </span>
+    </div>

@@ -1,0 +1,12 @@
+{"records": [
+{"iICB": "0001","iName": "Oil & Gas"},
+{"iICB": "1000","iName": "Basic Materials"},
+{"iICB": "2000","iName": "Industrials"},
+{"iICB": "3000","iName": "Consumer Goods"},
+{"iICB": "4000","iName": "Health Care"},
+{"iICB": "5000","iName": "Consumer Services"},
+{"iICB": "6000","iName": "Telecommunications"},
+{"iICB": "7000","iName": "Utilities"},
+{"iICB": "8000","iName": "Financials"},
+{"iICB": "9000","iName": "Technology"}
+  ]}
